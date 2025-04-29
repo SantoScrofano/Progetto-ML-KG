@@ -7,7 +7,7 @@ with open (percorso, "rb") as f:
     modelloXGB= pickle.load(f)
 
 def richiesta_input():
-     st.write("_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_ì_^_^_^_^_^_^_^_^_^_^_^_^_")
+     st.write("_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^")
      st.write(" Ciao , ti va di darmi delle info personali sul tuo stile di vita e così stimare la tua variazione di peso?  ")
      st.write("-------------------------------------------------------------------------------------------------------------------------")
      ETA = st.number_input(" INIZIAMO CON LA PRIMA DOMANDA: Quanti anni hai?  ")
@@ -26,14 +26,14 @@ def richiesta_input():
 def spiega_risultato(predizione):
      st.write("Risultato:")
      if predizione > 0.1 :
-         st.write(" Secondo il modello ingrasserai di",{predizione }, "KG! ")
+         st.write(" Secondo il modello ingrasserai di",{round(predizione)}, "KG! ")
      elif predizione < -0.1 :
-         st.write(" Secondo il modello dimagrirai di",{abs(predizione)}, "KG! ")
+         st.write(" Secondo il modello dimagrirai di",{round(abs(predizione))}, "KG! ")
      else:
          st.write("Avrai delle variazioni minime, pressocchè nulle. Sei costante nel tempo ! ")
 
 def main():
-     st.title(" :) PREVEDO LA TUA VARIAZIONE DI MASSA CORPOREA SE RISPONDI A QUALCHE MIA DOMANDA :) ")
+     st.title(" :) PREVEDO LA TUA VARIAZIONE DI MASSA CORPOREA :) ")
      input = richiesta_input()
 
      if st.button('CALCOLO.....'): 
@@ -41,7 +41,7 @@ def main():
          spiega_risultato(predizione)
          
 st.write(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::")
-st.write("GRAZIE MILLE PER AVER")
+st.write("GRAZIE MILLE IN ANTICIPO PER AVER")
 st.write("UTILIZZATO IL MIO PROGRAMMA")
 st.write(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::")
 
