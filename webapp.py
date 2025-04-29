@@ -2,7 +2,7 @@ import streamlit as st
 import numpy as np
 import pickle
 
-percorso = 'modello/modello xgb ottimizzato.pkl'
+percorso = 'modello xgb ottimizzato.pkl'
 with open (percorso, "rb") as f:
     modelloXGB= pickle.load(f)
 
