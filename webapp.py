@@ -28,7 +28,7 @@ def spiega_risultato(predizione):
      if predizione > 0.1 :
          st.write(" Secondo il modello ingrasserai di" , (predizione), " KG! ")
      elif predizione < -0.1 :
-         st.write(" Secondo il modello dimagrirai di", (predizione), " KG! ")
+         st.write(" Secondo il modello dimagrirai di", abs(predizione), " KG! ")
      else:
          st.write("Avrai delle variazioni minime, pressocchè nulle. Sei costante nel tempo ! ")
 
