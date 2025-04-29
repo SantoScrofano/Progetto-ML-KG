@@ -7,9 +7,9 @@ with open (percorso, "rb") as f:
     modelloXGB= pickle.load(f)
 
 def richiesta_input():
-     st.write("_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^")
+     st.write("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::")
      st.write(" Ciao , ti va di darmi delle info personali sul tuo stile di vita e così stimare la tua variazione di peso?  ")
-     st.write("-------------------------------------------------------------------------------------------------------------------------")
+     st.write("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-")
      ETA = st.number_input(" INIZIAMO CON LA PRIMA DOMANDA: Quanti anni hai?  ")
      SESSO = st.number_input("SESSO BIOLOGICO: scrivi '0' se sei uomo OPPURE '1' se sei donna.  ")
      CALORIEASSUNTE = st.number_input("Quante calorie assumi in media ogni giorno?  ")
