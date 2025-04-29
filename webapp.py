@@ -7,9 +7,9 @@ with open (percorso, "rb") as f:
     modelloXGB= pickle.load(f)
 
 def richiesta_input():
-     st.write("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::")
+     st.write("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::")
      st.write(" Ciao , ti va di darmi delle info personali sul tuo stile di vita e così stimare la tua variazione di peso?  ")
-     st.write("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-")
+     st.write("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-")
      ETA = st.number_input(" INIZIAMO CON LA PRIMA DOMANDA: Quanti anni hai?  ")
      SESSO = st.number_input("SESSO BIOLOGICO: scrivi '0' se sei uomo OPPURE '1' se sei donna.  ")
      CALORIEASSUNTE = st.number_input("Quante calorie assumi in media ogni giorno?  ")
@@ -26,9 +26,9 @@ def richiesta_input():
 def spiega_risultato(predizione):
      st.write("Risultato:")
      if predizione > 0.1 :
-         st.write(" Secondo il modello ingrasserai di",{round(predizione,2)}, "KG! ")
+         st.write(" Secondo il modello ingrasserai di",{round(predizione,1)}, "KG! ")
      elif predizione < -0.1 :
-         st.write(" Secondo il modello dimagrirai di",{round(abs(predizione,2))}, "KG! ")
+         st.write(" Secondo il modello dimagrirai di",{round(abs(predizione,1))}, "KG! ")
      else:
          st.write("Avrai delle variazioni minime, pressocchè nulle. Sei costante nel tempo ! ")
 
