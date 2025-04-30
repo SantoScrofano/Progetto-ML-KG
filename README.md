@@ -185,13 +185,13 @@ librerie utilizzate per questo progetto nel file Requirements.txt presente sulla
 funzionante! Tutte le piccole modifiche di codice per soli motivi estetici, successive al caricamento, verranno eseguite direttamente con la modifica codice da GitHub.
 
 
-                          !!!  URL PROGETTO ML - DELTA KG :  https://progetto-ml-kg-uo9dcf2jbgnxmdqbmt8fba.streamlit.app/  !!!
+             !!!  URL PROGETTO ML - DELTA KG :  https://progetto-ml-kg-uo9dcf2jbgnxmdqbmt8fba.streamlit.app/  !!!
 
 
 Spero che il mio umile lavoro sia di vostro gradimento , attendo le vostre opinioni.
 
                                                                                                                                                                                
-                                                                                                                                              SANTO SCROFANO.
+                                                                                                                  SANTO SCROFANO.
                                                                                                                                                                                   
                                                                                                                                                                                   
                                                                                                                                                                                   
