@@ -94,8 +94,8 @@ GRAFICI PIU' ELABORATI
 __________________________________________________________________________________________________________________________________________________________________________________________________________________
 
 
-         CLUSTERING GERARCHICO CON K-MEANS - (APPR. NON SUPERVISIONATO) - 
-                     
+ CLUSTERING GERARCHICO CON K-MEANS - (APPR. NON SUPERVISIONATO) -                    
+  
   Lo scopo sarà raggruppare i 100 individui in classi, a seconda il valore di aumento/perdita peso, trasformando un valore numerico in categoriale.
   Carico CSV e considero solo le due feautures "PesoIniziale" & "VariazionePeso" . Prima rappresento i punti con grafico a dispersione per vedere
  l'andamento dei valori. Importo Il metodo KMeans dalla libreria ScikitLearn e abbino tra loro i valori X e Y con la funzione .list(zip()) . Creo
@@ -185,13 +185,13 @@ librerie utilizzate per questo progetto nel file Requirements.txt presente sulla
 funzionante! Tutte le piccole modifiche di codice per soli motivi estetici, successive al caricamento, verranno eseguite direttamente con la modifica codice da GitHub.
 
 
-                                              !!!  URL PROGETTO ML - DELTA KG :  https://progetto-ml-kg-uo9dcf2jbgnxmdqbmt8fba.streamlit.app/  !!!
+                          !!!  URL PROGETTO ML - DELTA KG :  https://progetto-ml-kg-uo9dcf2jbgnxmdqbmt8fba.streamlit.app/  !!!
 
 
 Spero che il mio umile lavoro sia di vostro gradimento , attendo le vostre opinioni.
 
                                                                                                                                                                                
-                                                                                                                                                                                                 SANTO SCROFANO.
+                                                                                                                                              SANTO SCROFANO.
                                                                                                                                                                                   
                                                                                                                                                                                   
                                                                                                                                                                                   
