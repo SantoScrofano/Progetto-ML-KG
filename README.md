@@ -54,17 +54,19 @@ REGRESSIONE MULTIPLA -
                          coefficiente più grande per constatare la maggiore variazione di Y.
 
 
+
 * entrambe i comandi sono stati usati per sostituire i valori categoriali in numerici, cambia solo il campo di applicazione: la funzione .map() può cambiare i valori solo ad una colonna per volta con l'ausilio di un dizionario, mentre la funzione .replace() riesce a sostituire con un unico comando tutti i valori del dataset che voglio.
 
 
 
+
 TRAIN/TEST
-          Carico CSV e sostituisco variabili categoriche con numeriche. Imposto in X tutte le indipendenti tranne Surplus Calorico & Peso Finale e in Y l'ultima feautures 
-          "VariazionePeso". Eseguo split train/test (75%/25%) da libreria SciKitLearn [visualizzare con grafico scatter sia Xtrain/Ytrain che Xtest/Ytest per assicurarci 
-          che abbiano la stessa forma prima di procedere] e richiamo pure LinearRegression(). Creo la funzione e l'addestro .fit() con X e Y train , ottengo poi la 
-          predizione di Y dando in pasto alla funzione .predict() i valori Xtest. Adesso non resta che confrontare Ypred con Ytest, così decido di vedere (per adesso solo
-          graficamente) il rapporto che intercorre tra i 2 insiemi di valori con un grafico a punti .scatter() sovrapposto ad una retta diagonale creata con gli estremi di
-          Ypred e Ytest; quest'ultima rappresenta la massima corrispondenza tra i valori, cioè quando Ypred/Ytest=1. 
+      Carico CSV e sostituisco variabili categoriche con numeriche. Imposto in X tutte le indipendenti tranne Surplus Calorico & Peso Finale e in Y l'ultima feautures 
+      "VariazionePeso". Eseguo split train/test (75%/25%) da libreria SciKitLearn [visualizzare con grafico scatter sia Xtrain/Ytrain che Xtest/Ytest per assicurarci 
+      che abbiano la stessa forma prima di procedere] e richiamo pure LinearRegression(). Creo la funzione e l'addestro .fit() con X e Y train , ottengo poi la 
+      predizione di Y dando in pasto alla funzione .predict() i valori Xtest. Adesso non resta che confrontare Ypred con Ytest, così decido di vedere (per adesso solo
+      graficamente) il rapporto che intercorre tra i 2 insiemi di valori con un grafico a punti .scatter() sovrapposto ad una retta diagonale creata con gli estremi di 
+      Ypred e Ytest; quest'ultima rappresenta la massima corrispondenza tra i valori, cioè quando Ypred/Ytest=1. 
 
 
 
@@ -83,10 +85,10 @@ Ricalcolo r2 & EQM con il nuovo valore Ypred_scalare e Ytest ottenendo dei risul
 
 GRAFICI PIU' ELABORATI
 
-    -piechart (torta) sesso partecipanti , ho prima usato la funzione DF.iloc[:,0].describe() per vedere la moda con relativa frequenza .
+ -piechart (torta) sesso partecipanti , ho prima usato la funzione DF.iloc[:,0].describe() per vedere la moda con relativa frequenza .
                       
-     - grafico dell'importanza delle features di XGBoost tramite chiamata della funzione da XGBoost, poi comando plot.iportance(modello , typo= gain) per crearla , infine
-       rappresento con matplot. | NB non viene rappresentato il "Sesso" poiché ritenuto irrilevante sulle decisioni ad albero.
+- grafico dell'importanza delle features di XGBoost tramite chiamata della funzione da XGBoost, poi comando plot.iportance(modello , typo= gain)
+  per crearla , infine rappresento con matplot. | NB non viene rappresentato il "Sesso" poiché ritenuto irrilevante sulle decisioni ad albero.
         
 
 __________________________________________________________________________________________________________________________________________________________________________________________________________________
@@ -94,15 +96,15 @@ ________________________________________________________________________________
 
          CLUSTERING GERARCHICO CON K-MEANS - (APPR. NON SUPERVISIONATO) - 
                      
-                    Lo scopo sarà raggruppare i 100 individui in classi, a seconda il valore di aumento/perdita peso, trasformando un valore numerico in categoriale.
-                    Carico CSV e considero solo le due feautures "PesoIniziale" & "VariazionePeso" . Prima rappresento i punti con grafico a dispersione per vedere
-                    l'andamento dei valori. Importo Il metodo KMeans dalla libreria ScikitLearn e abbino tra loro i valori X e Y con la funzione .list(zip()) . Creo
-                   il campo inerzia e addestro la funzione KMeans con un ciclo for per un range di 5 valori ("penso" che siano questi il numero massimo di categorie
-                    visualizzando lo scatter iniziale). Richiamo la funzione inerzia con inertias.append(kmeans.inertia_) e la rappresento , trovando la parte di 
-                     grafico dove la curva inizia ad essere più lineare , il cosidetto "metodo a gomito", che indica il numero di cluster. Adattiamo dinuovo la 
-                     funzione kmeans , stavolta con il numero di cluster calcolato e rappresentiamo nuovamente un grafico a dispersione , impostando come 
-                     colorazione la sottofunzione kmeans.labels_ . I cluster ottenuti sono 4 , quindi potremmo raggruppareare i nostri individui in 4 gruppi ,
-                    considerando la variazione di peso dal valore di partenza, riassumento in termini più semplici i risultati raggiunti abbiamo individui con
-                    variazioni di peso : "esigue", "mediocri", "buone" e "strabilianti".
+  Lo scopo sarà raggruppare i 100 individui in classi, a seconda il valore di aumento/perdita peso, trasformando un valore numerico in categoriale.
+  Carico CSV e considero solo le due feautures "PesoIniziale" & "VariazionePeso" . Prima rappresento i punti con grafico a dispersione per vedere
+   l'andamento dei valori. Importo Il metodo KMeans dalla libreria ScikitLearn e abbino tra loro i valori X e Y con la funzione .list(zip()) . Creo
+   il campo inerzia e addestro la funzione KMeans con un ciclo for per un range di 5 valori ("penso" che siano questi il numero massimo di categorie
+   visualizzando lo scatter iniziale). Richiamo la funzione inerzia con inertias.append(kmeans.inertia_) e la rappresento , trovando la parte di 
+  grafico dove la curva inizia ad essere più lineare , il cosidetto "metodo a gomito", che indica il numero di cluster. Adattiamo dinuovo la 
+  funzione kmeans , stavolta con il numero di cluster calcolato e rappresentiamo nuovamente un grafico a dispersione , impostando come 
+  colorazione la sottofunzione kmeans.labels_ . I cluster ottenuti sono 4 , quindi potremmo raggruppareare i nostri individui in 4 gruppi ,
+  considerando la variazione di peso dal valore di partenza, riassumento in termini più semplici i risultati raggiunti abbiamo individui con
+  variazioni di peso : "esigue", "mediocri", "buone" e "strabilianti".
 
 _________________________________________________________________________________________________________________________________________________________________________________________________________________
