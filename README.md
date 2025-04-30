@@ -27,12 +27,12 @@ essa dal peso inziale, ma poiché il nostro output prevede di calcolare la varia
 
 ___________________________________________________________________________________________________________________________________________________________________________________________
 
-FUNZIONI BASE:     
+FUNZIONI BASE    
 
                Carico CSV da Pandas. Uso df.info() per VISUALIZZARE la TIPOLOGIA dei VALORI DELLE COLONNE (float-boolean-iteger-str) df.describe() la uso PER MEDIA E DEVIAZIONE STANDARD DI
                OGNI COLONNA CON VALORI NUMERICI (PS: Ho separato il dataset tramite DF.iloc[:,[X]] (per colonne) IN 3 PARTI per visualizzare tutto e catturare gli screenshot.
               
-               - MODA CON SCIPY.stats() DI COLONNE CON VALORI CATEGORIALI(testo): TRAMITE CODIFICA ONE HOT .get_dummies() vengono prodotte matricI con un numero di colonne pari al 
+               MODA CON SCIPY.stats() DI COLONNE CON VALORI CATEGORIALI(testo): TRAMITE CODIFICA ONE HOT .get_dummies() vengono prodotte matricI con un numero di colonne pari al 
                numero di categorie , quindi ricevo errore quando cerco la moda. Occorre rimuovere i valori nulli quando si decide di trasformare valori categoriali in 
                numerici con .fillna(), ma fortunatamente questo dataset non ne ha. Unica soluzione rimane quindi quella dell'assegnare un valore numerico per ogni categoria tramite
                dizionario di riferimento {a:1,b:2,...} con *funzione .map() e poi calcolare la MODA di ogni categoria delle colonne "SESSO", "LIVELLO ALLENAMENTO", "QUALITA' SONNO"
@@ -44,13 +44,14 @@ FUNZIONI BASE:
 _____________________________________________________________________________________________________________________________________________________________________________________________________
 
               
-       REGRESSIONE MULTIPLA - Ho sostituito le variabili categoriali in variabili numeriche tramite il *comando DF.replace([categoria1,categoria2,...],[sostitutonum1,sostitutonum2,...],
-                              inplace=True); se omettevo il comando inplace dovevo assegnare un nuovo nome al dataframe creato, così invece ho modificato l'originale . 
-                              Ho assegnato a X tutte le variabili indipendenti tranne "SurplusCalorico" e "Peso finale", ad Y la variabile dipendente "VariazionePeso". La regressione è                 
-                              stata richiamata alla libreria SciKitLearn e l'ho addestrata con X e Y tramite comando .fit(X,y) , dopo ho calcolato il coefficiente di regressione di ogni variabile
-                              indipendente per vedere quanto incide ognuna sul risultato Y . Infine ho predetto un valore Y inserendo i miei 9 ipotetici valori vitali e nonostante il 
-                              messaggio d'errore ad ogni tentativo ho ottenuto un valore Ypred. Infine ho pure provato altre combinazioni di input modificando quelli che avevano un 
-                              coefficiente più grande per constatare la maggiore variazione di Y.
+REGRESSIONE MULTIPLA -       
+                         Ho sostituito le variabili categoriali in variabili numeriche tramite il *comando DF.replace([categoria1,categoria2,...],[sostitutonum1,sostitutonum2,...],
+                         inplace=True); se omettevo il comando inplace dovevo assegnare un nuovo nome al dataframe creato, così invece ho modificato l'originale . 
+                         Ho assegnato a X tutte le variabili indipendenti tranne "SurplusCalorico" e "Peso finale", ad Y la variabile dipendente "VariazionePeso". La regressione è                 
+                         stata richiamata alla libreria SciKitLearn e l'ho addestrata con X e Y tramite comando .fit(X,y) , dopo ho calcolato il coefficiente di regressione di ogni variabile
+                         indipendente per vedere quanto incide ognuna sul risultato Y . Infine ho predetto un valore Y inserendo i miei 9 ipotetici valori vitali e nonostante il 
+                         messaggio d'errore ad ogni tentativo ho ottenuto un valore Ypred. Infine ho pure provato altre combinazioni di input modificando quelli che avevano un 
+                         coefficiente più grande per constatare la maggiore variazione di Y.
 
 
 * entrambe i comandi sono stati usati per sostituire i valori categoriali in numerici, cambia solo il campo di applicazione: la funzione .map() può cambiare i valori solo ad una colonna per volta con l'ausilio di un dizionario, mentre la funzione .replace() riesce a sostituire con un unico comando tutti i valori del dataset che voglio.
