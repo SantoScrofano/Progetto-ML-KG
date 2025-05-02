@@ -40,7 +40,7 @@ e tradotta nel commento col corrispettivo valore categoriale.
                
 [Uso la funzione DF.columns.tolist() per visualizzare le intestazioni| NB: le intestazioni il cui titolo ha un accento vengono riportate con " , tutte le altre con ' .]
                
-Analizzo infine con .corr() tra variabili e rappresentata con .heatmap() di Seaborn.
+Analizzo infine la correlazione .corr() tra variabili e la rappresento con .heatmap() di Seaborn. (TUTTI I GRAFICI SONO CARICATI NELL'OMONIMA CARTELLA NELLA REPOSITORY)
 _____________________________________________________________________________________________________________________________________________________________________________________________________
 
               
